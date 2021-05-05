@@ -170,6 +170,8 @@ uint8_t ctap_get_info(CborEncoder * encoder)
 
                 ret = cbor_encode_text_stringz(&array, "hmac-secret");
                 check_ret(ret);
+                ret = cbor_encode_text_stringz(&array, "solo-ssh-agent");
+                check_ret(ret);
             }
             ret = cbor_encoder_close_container(&map, &array);
             check_ret(ret);
